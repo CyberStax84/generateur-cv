@@ -18,10 +18,59 @@
 
     <main class="main-layout">
 
-        <section class="form-panel">
-            <h2>Vos informations</h2>
-            <p>Le formulaire sera ici (prochaine étape).</p>
-        </section>
+       <section class="form-panel">
+
+    <div class="form-section">
+        <h2>Informations personnelles</h2>
+
+        <div class="form-row">
+            <div class="form-field">
+                <label for="firstName">Prénom</label>
+                <input type="text" id="firstName" placeholder="Jean">
+            </div>
+            <div class="form-field">
+                <label for="lastName">Nom</label>
+                <input type="text" id="lastName" placeholder="Dupont">
+            </div>
+        </div>
+
+        <div class="form-field">
+            <label for="jobTitle">Intitulé du poste</label>
+            <input type="text" id="jobTitle" placeholder="Développeur Web">
+        </div>
+
+        <div class="form-row">
+            <div class="form-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="jean.dupont@email.com">
+            </div>
+            <div class="form-field">
+                <label for="phone">Téléphone</label>
+                <input type="tel" id="phone" placeholder="06 12 34 56 78">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-field">
+                <label for="city">Ville</label>
+                <input type="text" id="city" placeholder="Paris">
+            </div>
+            <div class="form-field">
+                <label for="linkedin">LinkedIn (optionnel)</label>
+                <input type="url" id="linkedin" placeholder="linkedin.com/in/jeandupont">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <h2>Profil</h2>
+        <div class="form-field">
+            <label for="profile">Présentez-vous en quelques phrases</label>
+            <textarea id="profile" rows="4" placeholder="Développeur web passionné avec 5 ans d'expérience..."></textarea>
+        </div>
+    </div>
+
+</section>
 
         <section class="preview-panel">
             <div class="cv-preview">
