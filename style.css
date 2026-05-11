@@ -284,4 +284,19 @@ body {
     line-height: 1.5;
     color: #374151;
     white-space: pre-line;
+}/* === COMPÉTENCES (ÉTIQUETTES) === */
+.cv-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+}
+
+.cv-skill-tag {
+    display: inline-block;
+    background-color: #f3f4f6;
+    color: #1a1a1a;
+    padding: 0.25rem 0.625rem;
+    border-radius: 4px;
+    font-size: 0.8125rem;
+    font-weight: 500;
 }

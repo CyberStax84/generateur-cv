@@ -84,7 +84,13 @@
         + Ajouter une formation
     </button>
 </div>
-
+<div class="form-section">
+    <h2>Compétences</h2>
+    <div class="form-field">
+        <label for="skills">Listez vos compétences séparées par des virgules</label>
+        <textarea id="skills" rows="3" placeholder="JavaScript, React, HTML/CSS, Gestion de projet, Anglais courant"></textarea>
+    </div>
+</div>
 </section>
 
       <div class="cv-preview">
@@ -117,10 +123,14 @@
         <h2 class="cv-section-title">Formation</h2>
         <div id="cvEducationsList"></div>
     </section>
-</div>
-    </section>
-    
+     </section>
+    <section class="cv-section" id="cvSkillsSection" style="display: none;">
+    <h2 class="cv-section-title">Compétences</h2>
+    <div class="cv-skills" id="cvSkillsList"></div>
+</section>
 
+</div>
+   
 </div>
         </section>
 

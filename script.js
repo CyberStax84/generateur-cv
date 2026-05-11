@@ -244,4 +244,35 @@ educationsList.addEventListener('click', (event) => {
         block.remove();
         renderEducations();
     }
+});// === GESTION DES COMPÉTENCES ===
+
+const skillsInput = document.getElementById('skills');
+const cvSkillsSection = document.getElementById('cvSkillsSection');
+const cvSkillsList = document.getElementById('cvSkillsList');
+
+skillsInput.addEventListener('input', () => {
+    const valeurBrute = skillsInput.value;
+
+    // Séparer par virgule, retirer les espaces inutiles, enlever les entrées vides
+    const skills = valeurBrute
+        .split(',')
+        .map(skill => skill.trim())
+        .filter(skill => skill.length > 0);
+
+    // Si aucune compétence, masquer la section
+    if (skills.length === 0) {
+        cvSkillsSection.style.display = 'none';
+        return;
+    }
+
+    // Sinon, afficher et reconstruire les étiquettes
+    cvSkillsSection.style.display = 'block';
+    cvSkillsList.innerHTML = '';
+
+    skills.forEach(skill => {
+        const tag = document.createElement('span');
+        tag.className = 'cv-skill-tag';
+        tag.textContent = skill;
+        cvSkillsList.appendChild(tag);
+    });
 });
