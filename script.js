@@ -33,4 +33,60 @@ connexions.forEach(({ champ, cible, secondChamp }) => {
             document.getElementById(cible).textContent = valeur;
         }
     });
+});// === GESTION DES EXPÉRIENCES PROFESSIONNELLES ===
+
+// Compteur pour donner un identifiant unique à chaque expérience ajoutée
+let experienceCount = 0;
+
+// Récupérer le bouton "Ajouter une expérience"
+const addExperienceBtn = document.getElementById('addExperienceBtn');
+// Récupérer le conteneur où on ajoutera les blocs
+const experiencesList = document.getElementById('experiencesList');
+
+// Quand on clique sur le bouton, on ajoute un nouveau bloc d'expérience
+addExperienceBtn.addEventListener('click', () => {
+    experienceCount++;
+    const id = experienceCount;
+
+    // On crée un nouvel élément HTML (un "bloc d'expérience")
+    const block = document.createElement('div');
+    block.className = 'experience-item';
+    block.id = `experience-${id}`;
+
+    // On définit son contenu (les champs du formulaire)
+    block.innerHTML = `
+        <div class="experience-item-header">
+            <span class="experience-item-title">Expérience ${id}</span>
+            <button type="button" class="btn-remove" data-target="experience-${id}">×</button>
+        </div>
+
+        <div class="form-field">
+            <label>Poste</label>
+            <input type="text" placeholder="Développeur Web Senior">
+        </div>
+
+        <div class="form-field">
+            <label>Entreprise</label>
+            <input type="text" placeholder="Nom de l'entreprise">
+        </div>
+
+        <div class="form-row">
+            <div class="form-field">
+                <label>Date de début</label>
+                <input type="text" placeholder="Janvier 2020">
+            </div>
+            <div class="form-field">
+                <label>Date de fin</label>
+                <input type="text" placeholder="Présent">
+            </div>
+        </div>
+
+        <div class="form-field">
+            <label>Description</label>
+            <textarea rows="3" placeholder="Vos missions et réalisations..."></textarea>
+        </div>
+    `;
+
+    // On ajoute le bloc dans la page
+    experiencesList.appendChild(block);
 });
