@@ -138,4 +138,17 @@ function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
-}
+}// === SUPPRESSION D'UNE EXPÉRIENCE ===
+
+// On écoute les clics sur le conteneur de tous les blocs d'expérience
+experiencesList.addEventListener('click', (event) => {
+    // On vérifie si le clic vient bien d'un bouton de suppression
+    if (event.target.classList.contains('btn-remove')) {
+        // On remonte jusqu'au bloc parent (.experience-item) et on le supprime
+        const block = event.target.closest('.experience-item');
+        block.remove();
+
+        // On redessine le CV pour refléter la suppression
+        renderExperiences();
+    }
+});
