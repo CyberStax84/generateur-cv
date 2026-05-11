@@ -243,4 +243,45 @@ body {
 
 .btn-remove:hover {
     color: #dc2626;
+}/* === EXPÉRIENCES DANS LE CV === */
+.cv-experience {
+    margin-bottom: 1rem;
+}
+
+.cv-experience:last-child {
+    margin-bottom: 0;
+}
+
+.cv-experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.25rem;
+    gap: 1rem;
+}
+
+.cv-experience-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.cv-experience-dates {
+    font-size: 0.8125rem;
+    color: #6b7280;
+    white-space: nowrap;
+}
+
+.cv-experience-company {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 0.375rem;
+}
+
+.cv-experience-description {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: #374151;
+    white-space: pre-line;
 }
