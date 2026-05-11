@@ -134,4 +134,57 @@ body {
 .form-field textarea {
     resize: vertical;
     min-height: 90px;
+}/* === CONTENU DU CV === */
+.cv-header {
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.cv-name {
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+    color: #1a1a1a;
+}
+
+.cv-job-title {
+    font-size: 1.0625rem;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 0.75rem;
+}
+
+.cv-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    font-size: 0.8125rem;
+    color: #4b5563;
+}
+
+.cv-contact span:empty {
+    display: none;
+}
+
+.cv-section {
+    margin-bottom: 1.5rem;
+}
+
+.cv-section-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #1a1a1a;
+    margin-bottom: 0.625rem;
+    padding-bottom: 0.375rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.cv-profile {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #374151;
 }
