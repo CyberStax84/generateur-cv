@@ -151,4 +151,97 @@ experiencesList.addEventListener('click', (event) => {
         // On redessine le CV pour refléter la suppression
         renderExperiences();
     }
+});// === GESTION DES FORMATIONS ===
+
+let educationCount = 0;
+
+const addEducationBtn = document.getElementById('addEducationBtn');
+const educationsList = document.getElementById('educationsList');
+const cvEducationsSection = document.getElementById('cvEducationsSection');
+const cvEducationsList = document.getElementById('cvEducationsList');
+
+addEducationBtn.addEventListener('click', () => {
+    educationCount++;
+    const id = educationCount;
+
+    const block = document.createElement('div');
+    block.className = 'experience-item';
+    block.dataset.id = id;
+    block.innerHTML = `
+        <div class="experience-item-header">
+            <span class="experience-item-title">Formation ${id}</span>
+            <button type="button" class="btn-remove">×</button>
+        </div>
+
+        <div class="form-field">
+            <label>Diplôme</label>
+            <input type="text" class="edu-degree" placeholder="Master en Informatique">
+        </div>
+
+        <div class="form-field">
+            <label>École / Université</label>
+            <input type="text" class="edu-school" placeholder="Nom de l'établissement">
+        </div>
+
+        <div class="form-row">
+            <div class="form-field">
+                <label>Date de début</label>
+                <input type="text" class="edu-start" placeholder="Septembre 2015">
+            </div>
+            <div class="form-field">
+                <label>Date de fin</label>
+                <input type="text" class="edu-end" placeholder="Juin 2017">
+            </div>
+        </div>
+    `;
+
+    educationsList.appendChild(block);
+
+    block.querySelectorAll('input').forEach(input => {
+        input.addEventListener('input', renderEducations);
+    });
+
+    renderEducations();
+});
+
+function renderEducations() {
+    const blocks = educationsList.querySelectorAll('.experience-item');
+
+    if (blocks.length === 0) {
+        cvEducationsSection.style.display = 'none';
+        return;
+    }
+
+    cvEducationsSection.style.display = 'block';
+    cvEducationsList.innerHTML = '';
+
+    blocks.forEach(block => {
+        const degree = block.querySelector('.edu-degree').value || 'Diplôme';
+        const school = block.querySelector('.edu-school').value || 'École';
+        const start = block.querySelector('.edu-start').value;
+        const end = block.querySelector('.edu-end').value;
+
+        const dates = [start, end].filter(d => d).join(' — ');
+
+        const item = document.createElement('div');
+        item.className = 'cv-experience';
+        item.innerHTML = `
+            <div class="cv-experience-header">
+                <span class="cv-experience-title">${escapeHtml(degree)}</span>
+                <span class="cv-experience-dates">${escapeHtml(dates)}</span>
+            </div>
+            <div class="cv-experience-company">${escapeHtml(school)}</div>
+        `;
+
+        cvEducationsList.appendChild(item);
+    });
+}
+
+// Suppression d'une formation (même principe que pour les expériences)
+educationsList.addEventListener('click', (event) => {
+    if (event.target.classList.contains('btn-remove')) {
+        const block = event.target.closest('.experience-item');
+        block.remove();
+        renderEducations();
+    }
 });
